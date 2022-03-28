@@ -1,6 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import { Container, Typography, CardMedia } from "@mui/material/";
 import { Box } from "@mui/system";
+import {useNavigate} from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   container: {
     // height: "100vh",
@@ -34,6 +35,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Leftbar = () => {
+  const navigate = useNavigate();
+function toHome(){
+  navigate('/');
+}
   const classes = useStyles();
   return (
     <Container className={classes.container}>
@@ -53,7 +58,7 @@ const Leftbar = () => {
         <Typography className={classes.intro}>Online Asset Management</Typography>
       </div>
       <div className={classes.item}>
-        <Typography className={classes.text}>Home</Typography>
+        <Typography className={classes.text} onClick={toHome}>Home</Typography>
       </div>
       <div className={classes.item}>
         <Typography className={classes.text}>Manage User</Typography>

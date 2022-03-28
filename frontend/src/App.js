@@ -6,7 +6,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./Pages/LoginPage/LoginPage";
-
+import HomePage from "./Pages/HomePage/HomePage";
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <div className="App">
@@ -24,10 +25,13 @@ function App() {
           }}
         >
           <Main />
+         
           <Routes>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<HomePage />} />
           </Routes>
         </Grid>
+        
       </Grid>
 
     </div>
