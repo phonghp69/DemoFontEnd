@@ -1,27 +1,25 @@
 import { makeStyles } from "@mui/styles";
 import { Container, Typography, CardMedia } from "@mui/material/";
 import { Box } from "@mui/system";
-import {useNavigate} from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   container: {
-    // height: "100vh",
     paddingTop: 10,
-    // backgroundColor: theme.palette.primary.main,
     position: "sticky",
     top: 0,
   },
   item: {
     display: "flex",
     alignItems: "center",
-    // marginBottom: theme.spacing(4),
     padding: 10,
     backgroundColor: "#d3d3d3",
     margin: 3,
-    '&:hover': {
-        color: "white",
-        background: "#f44336",
-      },
-    cursor: "pointer"
+    "&:hover": {
+      color: "white",
+      background: "#f44336",
+    },
+    cursor: "pointer",
   },
   text: {
     fontWeight: 500,
@@ -30,15 +28,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     display: "flex",
     padding: 10,
-    color: "red"
+    color: "red",
   },
+  
 }));
 
 const Leftbar = () => {
-  const navigate = useNavigate();
-function toHome(){
-  navigate('/');
-}
   const classes = useStyles();
   return (
     <Container className={classes.container}>
@@ -55,19 +50,33 @@ function toHome(){
         />
       </Box>
       <div>
-        <Typography className={classes.intro}>Online Asset Management</Typography>
+        <Typography className={classes.intro}>
+          Online Asset Management
+        </Typography>
       </div>
       <div className={classes.item}>
-        <Typography className={classes.text} onClick={toHome}>Home</Typography>
+        <Typography className={classes.text}>
+        <Link to="/"  style={{ color: 'inherit', textDecoration: 'inherit'}}>
+            Home
+          </Link>
+        </Typography>
       </div>
       <div className={classes.item}>
         <Typography className={classes.text}>Manage User</Typography>
       </div>
       <div className={classes.item}>
-        <Typography className={classes.text}>Manage Asset</Typography>
+        <Typography className={classes.text}>
+          <Link to="/asset-list"  style={{ color: 'inherit', textDecoration: 'inherit'}}>
+            Manage Asset
+          </Link>
+        </Typography>
       </div>
       <div className={classes.item}>
-        <Typography className={classes.text}>Manage Assignment</Typography>
+        <Typography className={classes.text}>
+          <Link to="/assignment-list"  style={{ color: 'inherit', textDecoration: 'inherit' }}>
+            Manage Assignment
+          </Link>
+        </Typography>
       </div>
       <div className={classes.item}>
         <Typography className={classes.text}>Request for Returning</Typography>

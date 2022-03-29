@@ -61,7 +61,7 @@ const Login = () => {
     initialValues:{
       user: "",
       password: "",
-      rememberCheck: true,
+    
     },
     validationSchema: Yup.object({
         user: Yup.string()
@@ -125,16 +125,6 @@ const Login = () => {
         {formik.touched.password && formik.errors.password ? <p className={classes.validationText}>{formik.errors.password}</p> : null}
         </div>
 
-        <div className={classes.formMarketing}>
-          <input
-            id="okayToRemember"
-            type="checkbox"
-            name="rememberCheck"
-            onChange={formik.handleChange}
-            value={formik.values.rememberCheck}
-          />
-          <label htmlFor="okayToRemember">Remember me</label>
-        </div>
         <button type="submit" className={classes.formSubmit}>Login</button>
       </form>
     </div>
